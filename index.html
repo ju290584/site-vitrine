@@ -3,167 +3,201 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Recrutement • Formation • Onboarding | Cabinets & TPE/PME</title>
-  <meta name="description" content="Entreprise spécialisée en recrutement, formation et onboarding de collaborateurs en cabinet d'expertise comptable et en TPE/PME." />
+  <title>Neofin Compétences | Recrutement • Formation • Onboarding</title>
+  <meta name="description" content="Neofin Compétences : recrutement, formation et onboarding de collaborateurs en cabinet d'expertise comptable et en TPE/PME." />
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#101a2e;
-      --muted:#98a2b3;
-      --text:#eef2ff;
-      --accent:#2dd4bf;
-      --white:#ffffff;
-      --border:rgba(255,255,255,.10);
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --bg:#f6f2ec;            /* fond clair */
+      --surface:#ffffff;       /* cartes */
+      --text:#0f1f2e;          /* bleu marine */
+      --muted:#475569;         /* gris bleuté */
+      --accent:#c9a24a;        /* doré */
+      --accent2:#0f1f2e;       /* marine */
+      --border:rgba(15,31,46,.12);
+      --shadow: 0 14px 30px rgba(15,31,46,.10);
       --radius:18px;
       --max:1100px;
     }
+
     *{box-sizing:border-box}
+    a{color:inherit; text-decoration:none}
+
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 20% 10%, rgba(45,212,191,.18), transparent 60%),
-                  radial-gradient(900px 700px at 80% 0%, rgba(99,102,241,.20), transparent 55%),
-                  var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(900px 600px at 20% 0%, rgba(201,162,74,.18), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(15,31,46,.10), transparent 55%),
+        var(--bg);
       color:var(--text);
       line-height:1.5;
     }
-    a{color:inherit; text-decoration:none}
+
     .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.65);
+      background: rgba(246,242,236,.75);
       border-bottom: 1px solid var(--border);
     }
+
     .nav{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0;
+      gap:16px;
     }
-    .logo{
-      display:flex; gap:10px; align-items:center; font-weight:700;
-      letter-spacing:.2px;
+
+    .brand{display:flex; align-items:center}
+    .brand-logo{height:44px; width:auto; display:block}
+
+    .navlinks{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .navlinks a{
+      color:rgba(15,31,46,.92);
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:12px;
     }
-    .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 6px rgba(45,212,191,.15)}
-    .navlinks{display:flex; gap:16px; align-items:center; flex-wrap:wrap}
-    .navlinks a{color:rgba(238,242,255,.88); font-size:14px; padding:8px 10px; border-radius:10px}
-    .navlinks a:hover{background:rgba(255,255,255,.06)}
+    .navlinks a:hover{background:rgba(15,31,46,.06)}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      padding:11px 14px; border-radius:12px; font-weight:600;
+      padding:11px 14px; border-radius:12px; font-weight:700;
       border:1px solid var(--border);
+      background: rgba(255,255,255,.55);
+      color: var(--text);
     }
+    .btn:hover{filter:brightness(1.02)}
     .btn.primary{
-      background: linear-gradient(135deg, rgba(45,212,191,.95), rgba(99,102,241,.90));
-      border: none;
-      color: #07111d;
+      background: linear-gradient(135deg, rgba(201,162,74,.95), rgba(201,162,74,.75));
+      border: 1px solid rgba(201,162,74,.55);
+      color: #0f1f2e;
     }
-    .btn.primary:hover{filter:brightness(1.05)}
-    .btn.ghost:hover{background:rgba(255,255,255,.06)}
+
+    main{padding-bottom:10px}
+
     .hero{padding:62px 0 26px}
     .grid{
-      display:grid; grid-template-columns: 1.2fr .8fr;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
       gap:22px;
+      align-items:stretch;
     }
+
     .card{
-      background: rgba(16,26,46,.75);
+      background: rgba(255,255,255,.85);
       border:1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
+
     .hero-left{padding:34px}
-    h1{margin:0 0 10px; font-size:44px; line-height:1.08}
-    .sub{color:rgba(238,242,255,.82); font-size:16px; margin:0 0 18px}
+    h1{margin:0 0 10px; font-size:44px; line-height:1.08; letter-spacing:-.3px}
+    .sub{color:rgba(15,31,46,.82); font-size:16px; margin:0 0 18px}
     .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid rgba(201,162,74,.35);
+      background: rgba(201,162,74,.10);
+      color: rgba(15,31,46,.92);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:14px;
+    }
+
     .hero-right{padding:24px}
     .kpis{display:grid; grid-template-columns:1fr; gap:12px}
     .kpi{
-      padding:14px; border-radius:14px; border:1px solid var(--border);
-      background: rgba(255,255,255,.03);
+      padding:14px; border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.70);
     }
     .kpi strong{display:block; font-size:14px}
     .kpi span{display:block; color:var(--muted); font-size:13px; margin-top:4px}
+
     section{padding:28px 0}
     .section-title{font-size:20px; margin:0 0 14px}
     .muted{color:var(--muted)}
+
     .cards3{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
     .service{padding:18px}
     .service h3{margin:0 0 8px; font-size:16px}
-    .service p{margin:0; color:rgba(238,242,255,.78); font-size:14px}
-    .pill{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 10px; border-radius:999px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.03);
-      color:rgba(238,242,255,.86);
-      font-size:13px;
-    }
-    .twocol{
-      display:grid; grid-template-columns:1fr 1fr; gap:14px;
-    }
+    .service p{margin:0; color:rgba(15,31,46,.78); font-size:14px}
+
+    .twocol{display:grid; grid-template-columns:1fr 1fr; gap:14px}
     .box{padding:18px}
-    ul{margin:10px 0 0; padding-left:18px; color:rgba(238,242,255,.78)}
+
+    ul{margin:10px 0 0; padding-left:18px; color:rgba(15,31,46,.78)}
     li{margin:6px 0}
+
     form{display:grid; gap:10px; margin-top:10px}
     input, textarea{
       width:100%;
       padding:12px 12px;
       border-radius:12px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,.03);
+      background: rgba(255,255,255,.90);
       color:var(--text);
       outline:none;
     }
-    input:focus, textarea:focus{border-color: rgba(45,212,191,.55)}
+    input:focus, textarea:focus{
+      border-color: rgba(201,162,74,.65);
+      box-shadow: 0 0 0 4px rgba(201,162,74,.18);
+    }
+
     footer{
       padding:26px 0 40px;
       border-top:1px solid var(--border);
-      color:rgba(238,242,255,.72);
+      color:rgba(15,31,46,.70);
       font-size:13px;
     }
     .foot{display:flex; gap:12px; justify-content:space-between; flex-wrap:wrap}
+
     @media (max-width: 900px){
       .grid{grid-template-columns:1fr}
       h1{font-size:34px}
       .cards3{grid-template-columns:1fr}
       .twocol{grid-template-columns:1fr}
+      .brand-logo{height:38px}
     }
   </style>
 </head>
+
 <body>
 <header>
   <div class="container nav">
-    <div class="logo">
-      <span class="dot"></span>
-      <span>VotreNom • Recrutement & Formation</span>
-    </div>
+    <a class="brand" href="#top" aria-label="Neofin Compétences">
+      <img src="assets/logo-neofin.png" alt="Neofin Compétences" class="brand-logo" />
+    </a>
     <nav class="navlinks">
       <a href="#offres">Offres</a>
       <a href="#method">Méthode</a>
       <a href="#cibles">Pour qui</a>
       <a href="#apropos">À propos</a>
-      <a class="btn ghost" href="#contact">Contact</a>
+      <a class="btn" href="#contact">Contact</a>
       <a class="btn primary" href="#contact">Diagnostic 15 min</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main id="top">
   <div class="container hero">
     <div class="grid">
       <div class="card hero-left">
-        <div class="pill">Spécialistes cabinets d’expertise comptable • TPE/PME</div>
-        <h1>Recrutez mieux. Formez plus vite. Intégrez durablement.</h1>
+        <div class="pill">Cabinets d’expertise comptable • TPE/PME</div>
+        <h1>Former, accompagner, transformer.</h1>
         <p class="sub">
-          Nous combinons <strong>recrutement</strong>, <strong>formation</strong> et <strong>onboarding</strong>
-          pour des collaborateurs opérationnels, adaptés aux réalités terrain.
+          Neofin Compétences vous accompagne sur le <strong>recrutement</strong>, la <strong>formation</strong> et
+          l’<strong>onboarding</strong> pour des équipes opérationnelles et durables.
         </p>
         <div class="cta">
           <a class="btn primary" href="#contact">Demander un diagnostic</a>
           <a class="btn" href="#offres">Voir nos offres</a>
         </div>
         <p class="muted" style="margin-top:14px;font-size:13px">
-          Objectif : sécuriser la prise de poste et réduire les ruptures d’essai grâce à un plan 30/60/90 jours.
+          Objectif : sécuriser la prise de poste et accélérer l’autonomie grâce à un plan 30/60/90 jours.
         </p>
       </div>
 
@@ -171,7 +205,7 @@
         <div class="kpis">
           <div class="kpi">
             <strong>Recrutement spécialisé</strong>
-            <span>Sourcing ciblé + évaluation métier + short-list structurée.</span>
+            <span>Sourcing ciblé, évaluation métier, short-list structurée.</span>
           </div>
           <div class="kpi">
             <strong>Formation opérationnelle</strong>
@@ -192,15 +226,15 @@
       <div class="cards3">
         <div class="card service">
           <h3>Recrutement</h3>
-          <p>Analyse du besoin, sourcing, entretiens, tests métier, prise de références, accompagnement jusqu’à l’intégration.</p>
+          <p>Analyse du besoin, sourcing, entretiens, évaluation métier, prise de références, accompagnement jusqu’à l’intégration.</p>
           <ul>
-            <li>Profils cabinet : collaborateur, chef de mission, fonctions support</li>
+            <li>Profils cabinet : collaborateur, révision, chef de mission, fonctions support</li>
             <li>Profils entreprise : compta/gestion, RAF/DAF, support administratif</li>
           </ul>
         </div>
         <div class="card service">
           <h3>Formation</h3>
-          <p>Programmes concrets orientés production et efficacité : organisation, techniques comptables, posture et relation client.</p>
+          <p>Programmes concrets orientés production et efficacité : organisation, techniques comptables, outils, posture et relation client.</p>
           <ul>
             <li>Montée en compétences rapide</li>
             <li>Supports & exercices applicables</li>
@@ -267,7 +301,7 @@
       <h2 class="section-title">À propos</h2>
       <div class="card box">
         <p class="muted" style="margin:0">
-          Nous sommes une entreprise spécialisée dans l’accompagnement des cabinets et des TPE/PME :
+          Neofin Compétences est spécialisée dans l’accompagnement des cabinets et des TPE/PME :
           <strong>recruter</strong>, <strong>former</strong>, puis <strong>intégrer</strong> avec une méthode pragmatique.
           Notre objectif : des prises de poste réussies et des équipes stables.
         </p>
@@ -292,7 +326,7 @@
         </div>
         <div class="card box">
           <h3 style="margin:0 0 10px">Coordonnées</h3>
-          <p class="muted" style="margin:0 0 8px">Email : <strong>contact@votre-domaine.fr</strong></p>
+          <p class="muted" style="margin:0 0 8px">Email : <strong>contact@neofin-competences.fr</strong></p>
           <p class="muted" style="margin:0 0 8px">Téléphone : <strong>+33 X XX XX XX XX</strong></p>
           <p class="muted" style="margin:0 0 8px">Zone : France (présentiel / distanciel)</p>
           <p class="muted" style="margin:10px 0 0">
@@ -306,7 +340,7 @@
 
 <footer>
   <div class="container foot">
-    <div>© <span id="year"></span> VotreNom — Recrutement • Formation • Onboarding</div>
+    <div>© <span id="year"></span> Neofin Compétences — Recrutement • Formation • Onboarding</div>
     <div style="display:flex;gap:14px;flex-wrap:wrap">
       <a href="#" class="muted">Mentions légales</a>
       <a href="#" class="muted">Politique de confidentialité</a>
@@ -324,16 +358,15 @@
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
 
-    // Envoi simple via mailto (MVP). Pour un vrai formulaire, on connecte Netlify Forms / Formspree / Make.
-    const subject = encodeURIComponent("Demande - Recrutement / Formation / Onboarding");
+    const subject = encodeURIComponent("Demande - Neofin Compétences (Recrutement / Formation / Onboarding)");
     const body = encodeURIComponent(
       `Nom: ${name}\nEntreprise: ${company}\nEmail: ${email}\n\nBesoin:\n${message}`
     );
 
     document.getElementById('formhint').textContent =
-      "Votre logiciel mail va s’ouvrir pour envoyer le message (mode MVP).";
+      "Votre logiciel mail va s’ouvrir pour envoyer le message (mode test).";
 
-    window.location.href = `mailto:contact@votre-domaine.fr?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:contact@neofin-competences.fr?subject=${subject}&body=${body}`;
     return false;
   }
 </script>
